@@ -2,6 +2,7 @@ package com.example.myre;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -21,8 +22,13 @@ public class LoginScreen extends AppCompatActivity {
         login=(Button)findViewById(R.id.login);
         newuser1=(TextView)findViewById(R.id.newuser);
         signupuser=(TextView)findViewById(R.id.signup);
+
+        signupuser.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(LoginScreen.this,SignupScreen.class);
+                startActivity(intent);
+            }
+        });
     }
-
-        signupuser.On
-
 }
