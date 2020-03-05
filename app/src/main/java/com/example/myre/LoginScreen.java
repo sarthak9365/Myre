@@ -8,9 +8,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class LoginScreen extends AppCompatActivity {
     EditText email,password;
+    String str1,str2;
     Button login;
     TextView newuser1,signupuser;
     @Override
@@ -30,5 +32,15 @@ public class LoginScreen extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        str1=email.getText().toString();
+        str2=password.getText().toString();
+        if(str1=="abc@gmail.com" && str2=="12345678")
+        {
+            Toast.makeText(this,"logged in successfully",Toast.LENGTH_LONG).show();
+        }
+        else{
+            Toast.makeText(this,"wrong emailid or password",Toast.LENGTH_LONG).show();
+        }
     }
 }
