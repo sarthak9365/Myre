@@ -19,12 +19,11 @@ public class LoginScreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_screen);
-        email=(EditText)findViewById(R.id.emailid);
+        email=(EditText)findViewById(R.id.login_email);
         password=(EditText)findViewById(R.id.password);
         login=(Button)findViewById(R.id.login);
         newuser1=(TextView)findViewById(R.id.newuser);
         signupuser=(TextView)findViewById(R.id.signup);
-
         signupuser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -33,14 +32,24 @@ public class LoginScreen extends AppCompatActivity {
             }
         });
 
-        str1=email.getText().toString();
-        str2=password.getText().toString();
-        if(str1=="abc@gmail.com" && str2=="12345678")
-        {
-            Toast.makeText(this,"logged in successfully",Toast.LENGTH_LONG).show();
-        }
-        else{
-            Toast.makeText(this,"wrong emailid or password",Toast.LENGTH_LONG).show();
-        }
+        //str1=email.getText().toString();
+        //str2=password.getText().toString();
+        login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(email.getText().toString()=="admin"){
+                    if(str2=="12345678"){
+                        Toast.makeText(LoginScreen.this,"Login Successfully",Toast.LENGTH_LONG).show();
+                    }
+                    else{
+                        Toast.makeText(LoginScreen.this, "Wrong Password", Toast.LENGTH_SHORT).show();
+                    }
+                }
+                else{
+                    Toast.makeText(LoginScreen.this, ""+email.getText().toString(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginScreen.this, "Wrong EmailID", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
     }
 }
