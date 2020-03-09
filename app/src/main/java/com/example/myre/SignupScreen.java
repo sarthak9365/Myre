@@ -12,7 +12,7 @@ public class SignupScreen extends AppCompatActivity {
     DatabaseHelper db;
     EditText fname,lname,email,pwd,cpwd;
     String strfn,strln,stremail,strpwd,strcpwd;
-    Button signup;
+    Button signup,viewdata;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,22 +24,25 @@ public class SignupScreen extends AppCompatActivity {
         pwd=(EditText) findViewById(R.id.password);
         cpwd=(EditText) findViewById(R.id.cpassword);
         signup=(Button)findViewById(R.id.signup1);
+        viewdata = (Button)findViewById(R.id.viewdata);
 
         signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                strfn=fname.getText().toString();
-                strln=lname.getText().toString();
-                stremail=email.getText().toString();
-                strpwd=pwd.getText().toString();
-                strcpwd=cpwd.getText().toString();
-                if(strfn.equals("")||strln.equals("")||stremail.equals("")||strpwd.equals("")||strcpwd.equals("")){
-                    Toast.makeText(getApplicationContext(),"Empty Fields",Toast.LENGTH_SHORT).show();
-                }
-                else{
-                    Toast.makeText(getApplicationContext(),"Registered Successfully",Toast.LENGTH_SHORT).show();
-                }
+                Long result = db.insert(fname.getText().toString(),
+                        lname.getText().toString(),
+                        email.getText().toString(),
+                        pwd.getText().toString(),
+                        cpwd.getText().toString());
 
+                if(result>-1)
+                {
+                    Toast.makeText(SignupScreen.this, "Insertion Successful", Toast.LENGTH_SHORT).show();
+                }
+                else
+                {
+                    Toast.makeText(SignupScreen.this, " Error in Insertion"+result, Toast.LENGTH_SHORT).show();
+                }
             }
         });
 

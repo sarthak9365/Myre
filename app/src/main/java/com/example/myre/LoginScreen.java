@@ -27,27 +27,27 @@ public class LoginScreen extends AppCompatActivity {
         newuser1=(TextView)findViewById(R.id.newuser);
         signupuser=(TextView)findViewById(R.id.signup);
 
-       login.setOnClickListener(new View.OnClickListener() {
-           @Override
-           public void onClick(View view) {
-               str1=email.getText().toString();
-               str2=password.getText().toString();
-               if(str1.equals(" ")||str2.equals(" ")){
-                   Toast.makeText(getApplicationContext(),"Empty Fields",Toast.LENGTH_SHORT).show();
-               }
-               else{
-                    Boolean validate = db.validate(str1,str2);
-                    if(validate == true){
-                        Toast.makeText(LoginScreen.this, "Login Successful", Toast.LENGTH_SHORT).show();
-                    }
-                    else{
-                        Toast.makeText(LoginScreen.this, "Wrong EmailID and Password", Toast.LENGTH_SHORT).show();
-                    }
-               }
-
-           }
-       });
-
+//       login.setOnClickListener(new View.OnClickListener() {
+//           @Override
+//           public void onClick(View view) {
+//               str1=email.getText().toString();
+//               str2=password.getText().toString();
+//               if(str1.equals(" ")||str2.equals(" ")){
+//                   Toast.makeText(getApplicationContext(),"Empty Fields",Toast.LENGTH_SHORT).show();
+//               }
+//               else{
+//                    Boolean validate = db.validate(str1,str2);
+//                    if(validate == true){
+//                        Toast.makeText(LoginScreen.this, "Login Successful", Toast.LENGTH_SHORT).show();
+//                    }
+//                    else{
+//                        Toast.makeText(LoginScreen.this, "Wrong EmailID and Password", Toast.LENGTH_SHORT).show();
+//                    }
+//               }
+//
+//           }
+//       });
+//
         signupuser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
