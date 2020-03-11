@@ -39,15 +39,15 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public Cursor displayData(){
         SQLiteDatabase mydb=this.getReadableDatabase();
-        Cursor resultCursor = mydb.rawQuery("SELECT * FROM studprofi",null);
+        Cursor resultCursor = mydb.rawQuery("SELECT * FROM "+TABLE_NAME,null);
         return resultCursor;
     }
-//
-//    //Checking Email and Password
-//    public Boolean validate(String email,String password){
-//        SQLiteDatabase db = this.getReadableDatabase();
-//        Cursor cursor = db.rawQuery("SELECT * FROM "+TABLE_NAME+" WHERE email=? AND password=?",new String[] {email});
-//        if(cursor.getCount()>0) return true;
-//        else    return  false;
-//    }
+
+    //Checking Email and Password
+    public Boolean validate(String email,String password){
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT * FROM "+TABLE_NAME+" WHERE EMAILID=email AND PASSWORD=password",new String[] {null});
+        if(cursor.getCount()>0) return true;
+        else    return  false;
+    }
 }
