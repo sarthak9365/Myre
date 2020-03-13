@@ -18,7 +18,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("CREATE TABLE IF NOT EXISTS sign_up(_id INTEGER PRIMARY KEY AUTOINCREMENT, FIRSTNAME TEXT, LASTNAME TEXT, EMAILID TEXT, PASSWORD TEXT, CONFIRMPASSWORD TEXT)");
+        db.execSQL("CREATE TABLE IF NOT EXISTS sign_up(_id INTEGER PRIMARY KEY AUTOINCREMENT, firstName TEXT, lastName TEXT, emailId TEXT, password TEXT)");
     }
 
     @Override
@@ -28,11 +28,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public long insert(String firstname,String lastname,String email,String password,String confirmpass){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        contentValues.put("FIRSTNAME",firstname);
-        contentValues.put("LASTNAME",lastname);
-        contentValues.put("EMAILID",email);
-        contentValues.put("PASSWORD",password);
-        contentValues.put("CONFIRMPASSWORD",confirmpass);
+        contentValues.put("firstName",firstname);
+        contentValues.put("lastName",lastname);
+        contentValues.put("emailId",email);
+        contentValues.put("password",password);
         long ins = db.insert(TABLE_NAME,"null",contentValues);
         return ins;
     }
@@ -46,7 +45,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     //Checking Email and Password
     public Boolean validate(String email,String password){
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor = db.rawQuery("SELECT * FROM "+TABLE_NAME+" WHERE EMAILID=email AND PASSWORD=password",new String[] {null});
+        String myquery = "SELECT * FROM "+TABLE_NAME+" WHERE emailId=? AND password=?";
+        System.out.println(myquery);
+        Cursor cursor = db.rawQuery(myquery,new String[] {email,password});
         if(cursor.getCount()>0) return true;
         else    return  false;
     }

@@ -12,7 +12,7 @@ public class SignupScreen extends AppCompatActivity {
     DatabaseHelper db;
     EditText fname,lname,email,pwd,cpwd;
     String strfn,strln,stremail,strpwd,strcpwd;
-    Button signup,viewdata;
+    Button signup;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,10 +21,9 @@ public class SignupScreen extends AppCompatActivity {
         fname= (EditText) findViewById(R.id.firstname);
         lname=(EditText) findViewById(R.id.lastname);
         email=(EditText) findViewById(R.id.emailId_1);
-        pwd=(EditText) findViewById(R.id.password);
+        pwd=(EditText) findViewById(R.id.password_signup);
         cpwd=(EditText) findViewById(R.id.cpassword);
         signup=(Button)findViewById(R.id.signup1);
-        viewdata = (Button)findViewById(R.id.viewdata);
 
         signup.setOnClickListener(new View.OnClickListener() {
             @Override
