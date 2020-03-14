@@ -39,7 +39,7 @@ public class LoginScreen extends AppCompatActivity {
                    //Toast.makeText(LoginScreen.this, stringEmail, Toast.LENGTH_LONG).show();
                    //Toast.makeText(LoginScreen.this, stringPassword, Toast.LENGTH_SHORT).show();
                    boolean validate = db.validate(stringEmail,stringPassword);
-                    if(validate == true){
+                    if(validate==true){
                         Toast.makeText(LoginScreen.this, "Login Successful", Toast.LENGTH_SHORT).show();
                     }
                     else{

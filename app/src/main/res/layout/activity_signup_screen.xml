@@ -8,73 +8,82 @@
     tools:context=".SignupScreen">
 
     <EditText
-        android:id="@+id/firstname"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="208dp"
+        android:id="@+id/editTextSignupFirstName1"
+        android:layout_width="@dimen/_200sdp"
+        android:layout_height="@dimen/_35sdp"
+        android:layout_marginTop="196dp"
         android:ems="10"
+        android:background="@drawable/textbox_back"
         android:hint="FirstName"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/lastname"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="14dp"
+        android:id="@+id/editTextSignupLastName1"
+        android:layout_width="@dimen/_200sdp"
+        android:layout_height="@dimen/_35sdp"
+        android:layout_marginTop="@dimen/_10sdp"
         android:ems="10"
         android:hint="LastName"
+        android:background="@drawable/textbox_back"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/firstname" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextSignupFirstName1" />
 
     <EditText
-        android:id="@+id/emailId_1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="14dp"
+        android:id="@+id/editTextSignupEmail1"
+        android:layout_width="@dimen/_200sdp"
+        android:layout_height="@dimen/_35sdp"
+        android:layout_marginTop="@dimen/_10sdp"
         android:ems="10"
         android:inputType="textEmailAddress"
         android:hint="Enter EmailId"
+        android:background="@drawable/textbox_back"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lastname" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextSignupLastName1" />
 
     <EditText
-        android:id="@+id/password_signup"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="14dp"
+        android:id="@+id/editTextSignupPassword1"
+        android:layout_width="@dimen/_200sdp"
+        android:layout_height="@dimen/_35sdp"
+        android:layout_marginTop="@dimen/_10sdp"
         android:ems="10"
         android:inputType="textPassword"
         android:hint="Password"
+        android:background="@drawable/textbox_back"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/emailId_1" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextSignupEmail1" />
 
     <EditText
-        android:id="@+id/cpassword"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="14dp"
+        android:id="@+id/editTextSignupConfirmPassword1"
+        android:layout_width="@dimen/_200sdp"
+        android:layout_height="@dimen/_35sdp"
+        android:layout_marginTop="@dimen/_10sdp"
         android:ems="10"
         android:hint="Confirm Password"
+        android:background="@drawable/textbox_back"
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/password_signup" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextSignupPassword1" />
 
     <Button
-        android:id="@+id/signup1"
+        android:id="@+id/buttonSignup1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="41dp"
+        android:layout_marginTop="60dp"
+        android:background="@drawable/button_back"
         android:text="Sign Up"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cpassword" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextSignupConfirmPassword1" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
