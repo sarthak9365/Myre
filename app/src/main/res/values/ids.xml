@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="textViewLoginForgotPassword" type="id" />
+    <item name="editTextMobileNo" type="id" />
+    <item name="googlesignin" type="id" />
+    <item name="editTextLoginMobileNo" type="id" />
+    <item name="editTextLoginMobileNumber" type="id"></item>
+    <item name="editTextLoginPassword" type="id"></item>
+    <item name="buttonLogin" type="id"></item>
+    <item name="buttonNotHavingAccount" type="id" />
+</resources>
