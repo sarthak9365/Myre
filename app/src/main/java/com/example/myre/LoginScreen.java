@@ -35,7 +35,7 @@ public class LoginScreen extends AppCompatActivity implements GoogleApiClient.On
     //database object
     DatabaseHelper db;
     //TextView refrence
-    TextView textViewLoginForgotPassword;
+    TextView textViewLoginForgotPassword,textViewMyShoppingMall;
     EditText editTextLoginMobileNo,editTextloginPassword;
     Button buttonLoginuser,buttonNothavingAccount;
 
@@ -53,6 +53,7 @@ public class LoginScreen extends AppCompatActivity implements GoogleApiClient.On
 
         db = new DatabaseHelper(this);
         //textview Casting
+        textViewMyShoppingMall=(TextView)findViewById(R.id.textViewShoppingMall);
         textViewLoginForgotPassword = (TextView)findViewById(R.id.textViewLoginForgotPassword);
         // EditText  Refrence Casting
         editTextLoginMobileNo = (EditText)findViewById(R.id.editTextLoginMobileNumber);

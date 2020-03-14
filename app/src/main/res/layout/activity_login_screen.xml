@@ -12,7 +12,7 @@
         android:id="@+id/editTextLoginMobileNumber"
         android:layout_width="@dimen/_200sdp"
         android:layout_height="@dimen/_35sdp"
-        android:layout_marginTop="180dp"
+        android:layout_marginTop="228dp"
         android:background="@drawable/textbox_back"
         android:hint="Enter Mobile Number"
         android:inputType="number"
@@ -88,10 +88,25 @@
         android:id="@+id/googlesignin"
         android:layout_width="125dp"
         android:layout_height="48dp"
+        android:layout_marginBottom="24dp"
         android:background="@drawable/common_google_signin_btn_icon_dark"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewShoppingMall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="My Shopping Mall"
+        android:textColor="#000"
+        android:textSize="@dimen/_18ssp"
+        app:layout_constraintBottom_toTopOf="@+id/editTextLoginMobileNumber"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.717"
+        tools:ignore="MissingConstraints" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
