@@ -6,11 +6,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TableRow;
 import android.widget.Toast;
 
 public class SignupScreen extends AppCompatActivity {
     DatabaseHelper db;
-    EditText fname,lname,email,pwd,cpwd;
+    EditText editTextSignupFirstName,editTextSignupLastName,editTextSignupEmail,editTextSignupPassWord,editTextSignupConfirmPassWord;
     String strfn,strln,stremail,strpwd,strcpwd;
     Button signup;
     @Override
@@ -18,29 +19,36 @@ public class SignupScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup_screen);
         db= new DatabaseHelper(this);
-        fname= (EditText) findViewById(R.id.firstname);
-        lname=(EditText) findViewById(R.id.lastname);
-        email=(EditText) findViewById(R.id.emailId_1);
-        pwd=(EditText) findViewById(R.id.password_signup);
-        cpwd=(EditText) findViewById(R.id.cpassword);
-        signup=(Button)findViewById(R.id.signup1);
+        editTextSignupFirstName= (EditText) findViewById(R.id.editTextSignupFirstName1);
+        editTextSignupLastName=(EditText) findViewById(R.id.editTextSignupLastName1);
+        editTextSignupEmail=(EditText) findViewById(R.id.editTextSignupEmail1);
+        editTextSignupPassWord=(EditText) findViewById(R.id.editTextSignupPassword1);
+       editTextSignupConfirmPassWord =(EditText) findViewById(R.id.editTextSignupConfirmPassword1);
+        signup=(Button)findViewById(R.id.buttonSignup1);
+
 
         signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Long result = db.insert(fname.getText().toString(),
-                        lname.getText().toString(),
-                        email.getText().toString(),
-                        pwd.getText().toString(),
-                        cpwd.getText().toString());
+                Long result = db.insert(editTextSignupFirstName.getText().toString(),
+                        editTextSignupLastName.getText().toString(),
+                        editTextSignupEmail.getText().toString(),
+                        editTextSignupPassWord.getText().toString(),
+                        editTextSignupConfirmPassWord.getText().toString());
 
-                if(result>-1)
-                {
-                    Toast.makeText(SignupScreen.this, "Insertion Successful", Toast.LENGTH_SHORT).show();
-                }
-                else
-                {
-                    Toast.makeText(SignupScreen.this, " Error in Insertion"+result, Toast.LENGTH_SHORT).show();
+                if (editTextSignupFirstName.getText().toString().equals("") || editTextSignupLastName.getText().toString().equals("") || editTextSignupEmail.getText().toString().equals("") ||
+                        editTextSignupPassWord.getText().toString().equals("") || editTextSignupConfirmPassWord.getText().toString().equals("")) {
+                    Toast.makeText(SignupScreen.this, "Fields are empty", Toast.LENGTH_SHORT).show();
+                } else {
+                    if (editTextSignupPassWord.getText().toString().equals(editTextSignupConfirmPassWord.getText().toString())) {
+                        if (result > -1) {
+                            Toast.makeText(SignupScreen.this, "Insertion Successfully", Toast.LENGTH_SHORT).show();
+                        } else {
+                            Toast.makeText(SignupScreen.this, "Wrong insertion", Toast.LENGTH_SHORT).show();
+                        }
+                    } else {
+                        Toast.makeText(SignupScreen.this, "Password doesn't match", Toast.LENGTH_SHORT).show();
+                    }
                 }
             }
         });
