@@ -35,13 +35,13 @@
         app:layout_constraintTop_toBottomOf="@+id/editTextSignupFirstName1" />
 
     <EditText
-        android:id="@+id/editTextSignupEmail1"
+        android:id="@+id/editTextSignupMobileNumber"
         android:layout_width="@dimen/_200sdp"
         android:layout_height="@dimen/_35sdp"
         android:layout_marginTop="@dimen/_10sdp"
         android:ems="10"
-        android:inputType="textEmailAddress"
-        android:hint="Enter EmailId"
+        android:inputType="number"
+        android:hint="Enter Mobile Number"
         android:background="@drawable/textbox_back"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -58,7 +58,7 @@
         android:background="@drawable/textbox_back"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextSignupEmail1" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextSignupMobileNumber" />
 
     <EditText
         android:id="@+id/editTextSignupConfirmPassword1"
